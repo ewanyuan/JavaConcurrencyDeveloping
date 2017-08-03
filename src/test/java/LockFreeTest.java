@@ -28,7 +28,7 @@ public class LockFreeTest {
             }
             assertTrue(true);
         } catch (Exception ex) {
-            //if the notify free stack is replaced with a normal stack, an emptyStackException or
+            //if the lock free stack is replaced with a normal stack, an emptyStackException or
             //overflowException will be thrown, cause it is not thread safe.
             assertTrue(false);
         }

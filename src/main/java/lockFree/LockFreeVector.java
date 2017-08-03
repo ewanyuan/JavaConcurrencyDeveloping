@@ -23,7 +23,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 
 /**
- * It is a thread safe and notify-free vector.
+ * It is a thread safe and lock-free vector.
  * This class implement algorithm from:<br>
  *
  * Lock-free Dynamically Resizable Arrays <br>
