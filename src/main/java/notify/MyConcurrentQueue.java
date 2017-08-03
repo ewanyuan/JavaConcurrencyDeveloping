@@ -1,4 +1,4 @@
-package lock;
+package notify;
 
 import java.util.ArrayList;
 import java.util.List;

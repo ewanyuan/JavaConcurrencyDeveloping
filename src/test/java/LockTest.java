@@ -1,4 +1,4 @@
-import lock.MyConcurrentQueue;
+import notify.MyConcurrentQueue;
 import org.junit.Test;
 
 /**
