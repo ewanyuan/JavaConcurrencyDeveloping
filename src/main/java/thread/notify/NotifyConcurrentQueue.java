@@ -1,4 +1,4 @@
-package notify;
+package thread.notify;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,13 +6,13 @@ import java.util.List;
 /**
  * Created by ewan on 11/07/2017.
  */
-public class MyConcurrentQueue {
+public class NotifyConcurrentQueue {
     private List<Integer> container = new ArrayList<>();
     final private int maxSize = 10;
 
     public synchronized Integer get() throws InterruptedException {
         if (container.size() < 1) {
-            this.wait();
+            this.wait(); //会释放当前的锁
         }
         Integer first = container.get(0);
         container.remove(first);

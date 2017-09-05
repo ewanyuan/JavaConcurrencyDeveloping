@@ -1,4 +1,4 @@
-import notify.MyConcurrentQueue;
+import thread.notify.NotifyConcurrentQueue;
 import org.junit.Test;
 
 /**
@@ -7,7 +7,7 @@ import org.junit.Test;
 public class LockTest {
     @Test
     public void TestMyConcurrentQueue() {
-        MyConcurrentQueue queue = new MyConcurrentQueue();
+        NotifyConcurrentQueue queue = new NotifyConcurrentQueue();
 
         new Thread(() -> {
             for (int i = 0; i < 10000; i++) {
