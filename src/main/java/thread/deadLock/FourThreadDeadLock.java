@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by ewan on 02/09/2017.
  */
-public class DeadLockDemo {
+public class FourThreadDeadLock {
     private static Lock place1 = new ReentrantLock();
     private static Lock place2 = new ReentrantLock();
     private static Lock place3 = new ReentrantLock();

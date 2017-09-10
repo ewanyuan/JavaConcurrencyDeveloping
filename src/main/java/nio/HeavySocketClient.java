@@ -1,6 +1,8 @@
 
 package nio;
 
+import sun.security.krb5.internal.crypto.Des;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,6 +15,24 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class HeavySocketClient {
+	public enum DD{
+		Order("预定中"),
+		Checkin("入住中");
+
+		public String getDes() {
+			return des;
+		}
+
+		public void setDes(String des) {
+			this.des = des;
+		}
+
+		private String des;
+		DD(String des) {
+			this.des = des;
+		}
+	}
+
 	private static ExecutorService  tp=Executors.newCachedThreadPool();
 	public static class EchoClient implements Runnable{
 		public void run(){
@@ -55,7 +75,8 @@ public class HeavySocketClient {
 		}
 	}
     public static void main(String[] args) throws IOException {
-    	EchoClient ec=new EchoClient();
+		System.out.println(DD.Order.getDes());
+		EchoClient ec=new EchoClient();
 		tp.execute(ec);
     }
 }

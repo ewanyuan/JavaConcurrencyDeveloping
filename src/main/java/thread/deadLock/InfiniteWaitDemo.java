@@ -118,5 +118,16 @@ public class InfiniteWaitDemo {
         car2.start();
         car3.start();
         car4.start();
+
+        //wait不会产生死锁的原因是：wait最多只会出现互相希望别人叫醒的情况而所有线程都wait下去。
+        //但这时如果有别人发出通知，线程还可以继续跑下去。
+        //不像死锁，因阻塞导致，只有一个线程被kill掉释放了资源，程序才可以继续跑下去。
+        Thread.sleep(5000);
+        synchronized (place1) {
+            place1.notifyAll();
+        }
+        synchronized (place3) {
+            place3.notifyAll();
+        }
     }
 }
